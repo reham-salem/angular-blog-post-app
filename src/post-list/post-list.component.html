@@ -1,0 +1,38 @@
+<div class="headerSection">
+    <div class="asBtn"><p>Our blog</p></div>
+    <h1>Resources and insights</h1>
+    <p>The latest industry news, interviews, technologies, and resources</p>
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search..."/>
+    </div>
+</div>
+
+<app-loading-indicator *ngIf="loading"></app-loading-indicator>
+
+<div class="postContainer" *ngIf="postList.length>0">
+   <div *ngFor="let item of postList" class="post-item ">
+      <img [src]="item.cover_image?item.cover_image:''" class="cover-image"/>
+      <p>{{item.type_of}}</p>
+      <div class="titleIcon">
+        <h3>{{ item.title }}</h3>
+        <a [routerLink]="[item.id,'details']"> 
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+            <path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/>
+          </svg>
+        </a>
+      </div>
+      <p>{{item.description}}</p>
+      <div class="user-info">
+        <img [src]="item.user.profile_image" class="profile-image">
+        <p>{{item.user.name}}</p>
+      </div>
+      {{item.published_at | date: 'dd/MM/yyyy' }}
+   </div>
+</div>
+<app-pagination-controls *ngIf="postList.length>0" [currentPage]="page" [totalPages]="totalPages" (pageChange)="onPageChange($event)"></app-pagination-controls>
+
+<div *ngIf="postList.length===0 &&!hasError" class="empty-container">
+    <p>No data found</p>
+</div>
+
+<app-error-message [message]="errormessage"  (tryAgain)="getAllPosts()" *ngIf="hasError"></app-error-message>

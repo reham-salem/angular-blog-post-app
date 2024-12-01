@@ -1,0 +1,26 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    .paginationButton,
+    .paginationNumber {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      background: #fff;
+      cursor: pointer;
+      transition:'background 0.3s';
+      &:disabled {
+        background: #f5f5f5;
+        cursor: not-allowed;
+      }
+      &.active {
+        background: #007bff;
+        color: #fff;
+      }
+      &:hover:not(:disabled) {
+        background: #f0f0f0;
+      }
+    }
+  }
+  

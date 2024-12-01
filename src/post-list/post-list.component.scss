@@ -1,0 +1,123 @@
+.headerSection{
+    text-align: center;
+    color: #1b1b73;
+    .asBtn{
+        width: 150px;
+        align-items: center;
+        border-radius: 20px;
+        background-color: #e8e8f2;
+        height: 30px;
+        margin: auto;
+    }
+    .search-container {
+        max-width: 300px; 
+        margin: auto;
+      }
+      
+      .search-input {
+        width: 100%;
+        padding: 10px 10px 10px 25px;
+        border: 1px solid #ccc;
+        border-radius: 25px; 
+      }
+      .search-input:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+      .search-input::placeholder {
+        color: #aaa;
+      }
+}
+
+.postContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    padding: 20px;
+    .post-item {
+        background: #fff;
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .cover-image {
+            width: 100%;
+            // height: auto;
+            border-radius: 8px;
+        }
+        .titleIcon{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            svg{
+                width: 10px;
+                cursor: pointer;
+            }
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+          
+        .profile-image {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+    }
+}
+
+.empty-container,
+.error-container {
+    background-color: #fff;
+    border: 1px solid #d1d3d8;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 0 rgba(114, 156, 185, .388);
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 30px 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    color: orange;
+
+}
+
+@media (max-width: 768px) {
+    .postContainer {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  
+    .headerSection .search-container {
+      max-width: 80%; 
+    }
+  
+    .headerSection .asBtn {
+      width: 100%; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .postContainer {
+      grid-template-columns: 1fr; 
+      padding: 10px; 
+    }
+  
+    .headerSection .search-container {
+      max-width: 100%; 
+    }
+  
+    .empty-container,
+    .error-container {
+      margin-top: 20px; 
+      font-size: 16px; 
+    }
+  } 
+
+
+

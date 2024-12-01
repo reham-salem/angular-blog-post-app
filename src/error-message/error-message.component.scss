@@ -1,0 +1,22 @@
+.error-container{
+    background-color: #fff;
+    border: 1px solid #d1d3d8;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 0 rgba(114, 156, 185, .388);
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 30px 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    color: red;
+    button{
+        padding: 8px;
+        width: 100px;
+        border-radius: 15px;
+        background: #303057;
+        color: white
+    }
+}

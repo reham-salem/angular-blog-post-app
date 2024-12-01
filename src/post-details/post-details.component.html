@@ -1,0 +1,11 @@
+<div class="post-item">
+    <img [src]="post.cover_image?post.cover_image:''" class="cover-image"/>
+    <p>{{post.type_of}}</p>
+      <h3>{{ post.title }}</h3>
+    <p>{{post.description}}</p>
+    <div class="user-info">
+      <img [src]="post.user.profile_image" class="profile-image">
+      <p>{{post.user.name}}</p>
+    </div>
+    {{post.published_at | date: 'dd/MM/yyyy' }}
+ </div>
